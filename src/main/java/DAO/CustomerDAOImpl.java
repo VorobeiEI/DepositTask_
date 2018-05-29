@@ -29,7 +29,7 @@ public class CustomerDAOImpl implements CustomerDao {
         //get the current hiber session
         Session currentsession = sessionFactory.getCurrentSession();
         //create a query...sort by the last name
-        Query theQuery = currentsession.createQuery("from Customer order by lastName");
+        Query theQuery = currentsession.createQuery("from Customer order by sumOfDeposit");
         //execute query and get result list
 
         List<Customer> customers = theQuery.list();
@@ -77,7 +77,7 @@ public class CustomerDAOImpl implements CustomerDao {
     }
 
     @Override
-    public List<Customer> searchCustomers(String theSearchName) {
+    public List<Customer> searchCustomers(Integer theSearchName) {
         //get the current hiber session
 
         Session currentSession = sessionFactory.getCurrentSession();
@@ -86,18 +86,15 @@ public class CustomerDAOImpl implements CustomerDao {
 
         // only search by name if theSearchName is not empty
 
-        if(theSearchName !=null && theSearchName.trim().length()>0){
+        if(theSearchName !=null){
             // search for firstName or lastName ... case insensitive
             theQuery=currentSession.createQuery
-                    ("from Customer " +
-                    "where lower(firstName) like:theName or lower(lastName)" +
-                    "like:theName");
-            theQuery.setParameter("theName", "%"+ theSearchName.toLowerCase()
-            +"%");
+                    ("from Customer where playerId =:playerId");
+            theQuery.setParameter("playerId", theSearchName);
 
         }else{
             // theSearchName is empty  just get all customers
-            theQuery=currentSession.createQuery("from Customer order by lastName");
+            theQuery=currentSession.createQuery("from Customer order by playerId");
         }
 
         // execute query and get result list

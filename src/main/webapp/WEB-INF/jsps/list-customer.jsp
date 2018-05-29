@@ -11,7 +11,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>List Customers</title>
+    <title>List Deposits</title>
 
     <!-- reference style sheet-->
     <link type="text/css"
@@ -31,7 +31,7 @@
 
             <!-- put Add Customer button -->
 
-            <input type="button" value = "Add Customer"
+            <input type="button" value = "Add Deposit"
                    onclick="window.location.href='showFormForAdd';return false;"
                    class="add-button"
             />
@@ -41,14 +41,18 @@
                 Search customer: <input type="text" name="theSearchName"/>
 
                 <input type="submit" value="Search" class="add-button"/>
+
+                ${deposums}
             </form:form>
+
+
             <!-- add our table here-->
 
             <table>
                 <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Email</th>
+                    <th>PlayerId</th>
+                    <th>Date</th>
+                    <th>Sum of Deposit</th>
                     <th>Action</th>
                 </tr>
 
@@ -67,9 +71,9 @@
 
 
                     <tr>
-                        <td>${tempCustomer.firstName}</td>
-                        <td>${tempCustomer.lastName}</td>
-                        <td>${tempCustomer.email}</td>
+                        <td>${tempCustomer.playerId}</td>
+                        <td>${tempCustomer.date}</td>
+                        <td>${tempCustomer.sumOfDeposit}</td>
                         <td><!--display the update link-->
                         <a href="${updateLink}">Update</a>
                             |

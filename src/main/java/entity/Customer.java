@@ -1,12 +1,14 @@
 package entity;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
+import java.sql.Date;
 
 /**
  * Created by JackSparrow on 5/3/2017.
  */
 @Entity
-@Table(name = "customer")
+@Table(name = "Customer")
 public class Customer {
 
     @Id
@@ -14,16 +16,25 @@ public class Customer {
     @Column(name = "id")
     private int id;
 
-    @Column(name = "first_name")
-    private String firstName;
+    @Column
+    private int playerId;
 
-    @Column(name = "last_name")
-    private String lastName;
+    @Column(name = "date")
+    private Date date;
 
-    @Column(name = "email")
-    private String email;
+    @Column(name = "sum_of_deposit")
+    private BigDecimal sumOfDeposit;
+
 
     public Customer() {
+    }
+
+    public int getPlayerId() {
+        return playerId;
+    }
+
+    public void setPlayerId(int playerId) {
+        this.playerId = playerId;
     }
 
     public int getId() {
@@ -34,37 +45,28 @@ public class Customer {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public Date getDate() {
+        return date;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
-    public String getLastName() {
-        return lastName;
+    public BigDecimal getSumOfDeposit() {
+        return sumOfDeposit;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public void setSumOfDeposit(BigDecimal sumOfDeposit) {
+        this.sumOfDeposit = sumOfDeposit;
     }
 
     @Override
     public String toString() {
         return "Customer{" +
                 "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
+                ", firstName='" + date + '\'' +
+                ", lastName='" + sumOfDeposit + '\'' +
                 '}';
     }
 }

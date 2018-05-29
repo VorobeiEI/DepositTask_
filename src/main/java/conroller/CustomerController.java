@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import service.CustomerService;
 
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -76,13 +77,14 @@ public class CustomerController {
 
     @PostMapping("/search")
     public String searchCustomers(@RequestParam("theSearchName")
-                                  String theSearchName, Model themodel){
+                                  Integer theSearchName, Model themodel){
         //search cutomer from the service
         List<Customer> theCustomers= customerService.searchCustomers(theSearchName);
+        
 
         //add the customers to the model
 
-        themodel.addAttribute("customers", theCustomers);
+        themodel.addAttribute("deposums", theCustomers);
 
         return "list-customer";
     }

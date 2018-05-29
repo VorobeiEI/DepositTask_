@@ -40,26 +40,18 @@
             <tbody>
             <tr>
                 <td>
-                    <label>First name:</label>
+                    <label>PlayerId:</label>
                 </td>
                 <td>
-                    <form:input path="firstName"/>
+                    <form:input path="playerId"/>
                 </td>
             </tr>
             <tr>
             <td>
-                <label>Last name:</label>
+                <label>Sum of Deposit:</label>
             </td>
             <td>
-                <form:input path="lastName"/>
-            </td>
-            </tr>
-            <tr>
-            <td>
-                <label>Email:</label>
-            </td>
-            <td>
-                <form:input path="email"/>
+                <form:input path="sumOfDeposit"/>
             </td>
             </tr>
             <tr>
