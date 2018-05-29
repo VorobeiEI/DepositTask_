@@ -1,11 +1,17 @@
 package entity;
 
+import org.hibernate.annotations.DynamicUpdate;
+import org.hibernate.annotations.OptimisticLockType;
+import org.hibernate.annotations.OptimisticLocking;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Date;
 
 @Entity
 @Table(name = "Deposit")
+@OptimisticLocking(type = OptimisticLockType.ALL)
+@DynamicUpdate
 public class Deposit {
 
     @Id
@@ -21,7 +27,6 @@ public class Deposit {
 
     @Column(name = "sumOfDeposit")
     private BigDecimal sumOfDeposit;
-
 
     public Deposit() {
     }
