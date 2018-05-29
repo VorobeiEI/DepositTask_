@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Save Customer</title>
+    <title>Save Deposit</title>
 
     <link type = "text/css"
     rel="stylesheet"
@@ -23,14 +23,14 @@
 
 <div id="wrapper">
     <div id="header">
-        <h2>CRM-Customer Relationship Manager</h2>
+        <h2>Players` Deposit Manager</h2>
     </div>
 </div>
 
 <div id="container">
-    <h3>Save Customer</h3>
+    <h3>Save Sum of Deposit for Player</h3>
 
-    <form:form action="saveCustomer" modelAttribute="customer" method="POST">
+    <form:form action="saveDeposit" modelAttribute="player" method="POST">
 
         <!--need to associate this data with customer id -->
 
@@ -43,7 +43,7 @@
                     <label>PlayerId:</label>
                 </td>
                 <td>
-                    <form:input path="playerId"/>
+                    <form:input type="number" path="playerId"/>
                 </td>
             </tr>
             <tr>
@@ -51,7 +51,7 @@
                 <label>Sum of Deposit:</label>
             </td>
             <td>
-                <form:input path="sumOfDeposit"/>
+                <form:input type="number" path="deposit"/>
             </td>
             </tr>
             <tr>
@@ -69,7 +69,7 @@
 
     <div style="clear: both;">  </div>
     <p>
-        <a href="${pageContext.request.contextPath}/customer/list">Back to list</a>
+        <a href="${pageContext.request.contextPath}/deposit/list">Back to list</a>
     </p>
 </div>
 </body>

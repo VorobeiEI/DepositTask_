@@ -22,7 +22,7 @@
 
 <div id ="wrapper">
     <div id = "header">
-        <h2>CRM - Customer Relationship Manager</h2>
+        <h2>Players` Deposit Manager</h2>
     </div>
     <br>
 
@@ -38,11 +38,10 @@
 
             <!--add a search box-->
             <form:form action="search" method="post">
-                Search customer: <input type="text" name="theSearchName"/>
+                Search players`s deposits: <input type="number" name="theSearchPlayerId"/>
 
                 <input type="submit" value="Search" class="add-button"/>
 
-                ${deposums}
             </form:form>
 
 
@@ -58,31 +57,37 @@
 
                 <!-- loop over and print our customers-->
 
-                <c:forEach var = "tempCustomer" items = "${customers}">
+                <c:forEach var = "tempPlayer" items = "${customers}">
                     <!-- construct an update link with customer id-->
-                    <c:url var="updateLink" value="/customer/showFormForUpdate">
-                        <c:param name="customerId" value="${tempCustomer.id}"/>
+                    <c:url var="updateLink" value="/deposit/showFormForUpdate">
+                        <c:param name="customerId" value="${tempPlayer.id}"/>
                     </c:url>
 
                     <!-- construct an delete link with customer id-->
-                    <c:url var="deleteLink" value="/customer/delete">
-                        <c:param name="customerId" value="${tempCustomer.id}"/>
+                    <c:url var="deleteLink" value="/deposit/delete">
+                        <c:param name="customerId" value="${tempPlayer.id}"/>
                     </c:url>
 
 
                     <tr>
-                        <td>${tempCustomer.playerId}</td>
-                        <td>${tempCustomer.date}</td>
-                        <td>${tempCustomer.sumOfDeposit}</td>
+                        <td>${tempPlayer.playerId}</td>
+                        <td>${tempPlayer.date}</td>
+                        <td>${tempPlayer.deposit}</td>
                         <td><!--display the update link-->
                         <a href="${updateLink}">Update</a>
                             |
                         <a href="${deleteLink}" onclick="if(!(confirm('Are you sure' +
-                         ' you want to delete this customer?'))) return false">Delete</a>
+                         ' you want to delete thos deposit?'))) return false">Delete</a>
                         </td>
 
                     </tr>
                 </c:forEach>
+                <tr>
+                    <th>Total:</th>
+                    <th></th>
+                    <th>${deposums}</th>
+                    <th></th>
+                </tr>
             </table>
         </div>
     </div>

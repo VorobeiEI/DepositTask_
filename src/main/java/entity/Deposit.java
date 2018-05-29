@@ -8,25 +8,25 @@ import java.sql.Date;
  * Created by JackSparrow on 5/3/2017.
  */
 @Entity
-@Table(name = "Customer")
-public class Customer {
+@Table(name = "Deposit")
+public class Deposit {
 
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
-    @Column
+    @Column(name = "playerId")
     private int playerId;
 
     @Column(name = "date")
     private Date date;
 
-    @Column(name = "sum_of_deposit")
+    @Column(name = "sumOfDeposit")
     private BigDecimal sumOfDeposit;
 
 
-    public Customer() {
+    public Deposit() {
     }
 
     public int getPlayerId() {
@@ -53,19 +53,19 @@ public class Customer {
         this.date = date;
     }
 
-    public BigDecimal getSumOfDeposit() {
+    public BigDecimal getDeposit() {
         return sumOfDeposit;
     }
 
-    public void setSumOfDeposit(BigDecimal sumOfDeposit) {
-        this.sumOfDeposit = sumOfDeposit;
+    public void setDeposit(BigDecimal sumOfdeposit) {
+        this.sumOfDeposit = sumOfdeposit;
     }
 
     @Override
     public String toString() {
-        return "Customer{" +
+        return "Deposit{" +
                 "id=" + id +
-                ", firstName='" + date + '\'' +
+                ", date='" + date + '\'' +
                 ", lastName='" + sumOfDeposit + '\'' +
                 '}';
     }
