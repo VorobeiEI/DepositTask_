@@ -9,13 +9,8 @@ import org.springframework.transaction.annotation.Transactional;
 import java.math.BigDecimal;
 import java.util.List;
 
-/**
- * Created by JackSparrow on 5/10/2017.
- */
 @Service
 public class PlayerServiceImpl implements PlayerService {
-
-    //need to inject customer DAO, dependency injection
 
     @Autowired
     private PlayerDao playerDao;

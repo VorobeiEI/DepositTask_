@@ -5,9 +5,6 @@ import entity.Deposit;
 import java.math.BigDecimal;
 import java.util.List;
 
-/**
- * Created by JackSparrow on 5/3/2017.
- */
 public interface PlayerDao {
 
     public List<Deposit> getCustomers();
@@ -20,5 +17,5 @@ public interface PlayerDao {
 
     List<Deposit> searchCustomers(Integer theSearchName);
 
-    BigDecimal sumOfExactCustomerDeposits (Integer playerId);
+    BigDecimal sumOfExactCustomerDeposits(Integer playerId);
 }

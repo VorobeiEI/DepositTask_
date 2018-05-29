@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/CRMCustomerTracker.iml" filepath="$PROJECT_DIR$/CRMCustomerTracker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DepositTask.iml" filepath="$PROJECT_DIR$/DepositTask.iml" />
     </modules>
   </component>
 </project>

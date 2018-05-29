@@ -4,15 +4,12 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Date;
 
-/**
- * Created by JackSparrow on 5/3/2017.
- */
 @Entity
 @Table(name = "Deposit")
 public class Deposit {
 
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
 
@@ -64,7 +61,7 @@ public class Deposit {
     @Override
     public String toString() {
         return "Deposit{" +
-                "id=" + id +
+                "playerId=" + playerId +
                 ", date='" + date + '\'' +
                 ", lastName='" + sumOfDeposit + '\'' +
                 '}';
